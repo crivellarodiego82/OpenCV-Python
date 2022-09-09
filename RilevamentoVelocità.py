@@ -68,20 +68,6 @@ RIGHT_TO_LEFT = 2
 frame_width_ft = 2*(math.tan(math.radians(FOV*0.5))*DISTANCE)
 ftperpixel = frame_width_ft / float(IMAGEWIDTH)
 print("Image width in feet {} at {} from camera".format("%.0f" % frame_width_ft,"%.0f" % DISTANCE))
-
-# state maintains the state of the speed computation process
-# if starts as WAITING
-# the first motion detected sets it to TRACKING
- 
-# if it is tracking and no motion is found or the x value moves
-# out of bounds, state is set to SAVING and the speed of the object
-# is calculated
-# initial_x holds the x value when motion was first detected
-# last_x holds the last x value before tracking was was halted
-# depending upon the direction of travel, the front of the
-# vehicle is either at x, or at x+w 
-# (tracking_end_time - tracking_start_time) is the elapsed time
-# from these the speed is calculated and displayed 
  
 state = WAITING
 direction = UNKNOWN
